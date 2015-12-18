@@ -3,7 +3,6 @@ package com.udacity.gradle.builditbigger.paid;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.example.morxander.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -49,7 +48,6 @@ class EndpointsAsyncTask extends AsyncTask<com.google.appengine.repackaged.com.g
     @Override
     protected void onPostExecute(String result) {
         if (context != null) {
-            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
             Intent intent = new Intent(context,MainActivityJokes.class);
             intent.putExtra("joke",result);
             context.startActivity(intent);
